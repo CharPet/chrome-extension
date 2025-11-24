@@ -39,3 +39,20 @@ function buy() {
 }
 
 // --------------------------------------
+
+const recipient = "James";
+
+const sender = "Pepe";
+
+// const email = "Hey " + recipient + "! How is it going? Cheers Per";
+
+// const email = `Hey ${recipient}! How is it going? Cheers Per`;
+
+// Backticks allow strings to be on multiple lines
+
+const email = `Hey ${recipient}! 
+  How is it going? Cheers ${sender}`;
+
+console.log(email);
+
+// --------------------------------------
