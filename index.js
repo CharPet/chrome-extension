@@ -29,6 +29,15 @@ const ulEl = document.getElementById("ul-el");
 
 // console.log(ulEl);
 
+localStorage.setItem("myLeads", "www.examplelead.com");
+console.log(localStorage.getItem("myLeads"));
+
+localStorage.setItem("myLeads2", "www.examplelead2.com");
+console.log(localStorage.getItem("myLeads2"));
+
+localStorage.clear();
+console.log(localStorage);
+
 inputBtn.addEventListener("click", function () {
   // console.log("Button clicked from addEventListener");
   // myLeads.push("www.awesomelead.com");
