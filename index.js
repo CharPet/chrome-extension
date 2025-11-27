@@ -45,7 +45,7 @@
 
 // -----------------------------------
 
-const myLeads = [];
+let myLeads = [];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
@@ -67,7 +67,14 @@ const ulEl = document.getElementById("ul-el");
 // -----------------------------------
 
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
-console.log(leadsFromLocalStorage);
+// console.log(leadsFromLocalStorage);
+
+// -----------------------------------
+
+if (leadsFromLocalStorage) {
+  myLeads = leadsFromLocalStorage;
+  renderLeads();
+}
 
 // -----------------------------------
 
@@ -117,7 +124,7 @@ function renderLeads() {
         <a href='${myLeads[i]}' target='_blank'>${myLeads[i]}</a>
       </li>
     `;
-    console.log(listItems);
+    // console.log(listItems);
   }
 
   // ulEl.innerHTML = "<li>" + listItems + "</li>";
