@@ -23,30 +23,36 @@
 //   "www.greatlead.com",
 // ];
 
+// -----------------------------------
+
 // How to store data (arrays) in localStorage (accepts strings only)
-let myLeads = `["www.awesomelead.com"]`;
+// let myLeads = `["www.awesomelead.com"]`;
 
 // 1.
-myLeads = JSON.parse(myLeads);
-console.log(myLeads);
+// myLeads = JSON.parse(myLeads);
+// console.log(myLeads);
 
 // 2.
-myLeads.push("www.awesomelead.com2");
-console.log(myLeads);
+// myLeads.push("www.awesomelead.com2");
+// console.log(myLeads);
 
 // 3.
-myLeads = JSON.stringify(myLeads);
-console.log(myLeads);
+// myLeads = JSON.stringify(myLeads);
+// console.log(myLeads);
 
 // 4.
-console.log(typeof myLeads);
+// console.log(typeof myLeads);
 
-// const myLeads = [];
+// -----------------------------------
+
+const myLeads = [];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
 // console.log(ulEl);
+
+// -----------------------------------
 
 // How to use the localStorage (global variable)
 // localStorage.setItem("myLeads", "www.examplelead.com");
@@ -58,6 +64,13 @@ const ulEl = document.getElementById("ul-el");
 // localStorage.clear();
 // console.log(localStorage);
 
+// -----------------------------------
+
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+console.log(leadsFromLocalStorage);
+
+// -----------------------------------
+
 inputBtn.addEventListener("click", function () {
   // console.log("Button clicked from addEventListener");
   // myLeads.push("www.awesomelead.com");
@@ -67,10 +80,13 @@ inputBtn.addEventListener("click", function () {
 
   inputEl.value = "";
 
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
+
   renderLeads();
 
   // renderLead();
   // inputEl.value = "";
+  console.log(localStorage.getItem("myLeads"));
 });
 
 function renderLeads() {
