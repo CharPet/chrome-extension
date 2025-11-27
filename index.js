@@ -22,21 +22,41 @@
 //   "www.epiclead.com",
 //   "www.greatlead.com",
 // ];
-const myLeads = [];
+
+// How to store data (arrays) in localStorage (accepts strings only)
+let myLeads = `["www.awesomelead.com"]`;
+
+// 1.
+myLeads = JSON.parse(myLeads);
+console.log(myLeads);
+
+// 2.
+myLeads.push("www.awesomelead.com2");
+console.log(myLeads);
+
+// 3.
+myLeads = JSON.stringify(myLeads);
+console.log(myLeads);
+
+// 4.
+console.log(typeof myLeads);
+
+// const myLeads = [];
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
 // console.log(ulEl);
 
-localStorage.setItem("myLeads", "www.examplelead.com");
-console.log(localStorage.getItem("myLeads"));
+// How to use the localStorage (global variable)
+// localStorage.setItem("myLeads", "www.examplelead.com");
+// console.log(localStorage.getItem("myLeads"));
 
-localStorage.setItem("myLeads2", "www.examplelead2.com");
-console.log(localStorage.getItem("myLeads2"));
+// localStorage.setItem("myLeads2", "www.examplelead2.com");
+// console.log(localStorage.getItem("myLeads2"));
 
-localStorage.clear();
-console.log(localStorage);
+// localStorage.clear();
+// console.log(localStorage);
 
 inputBtn.addEventListener("click", function () {
   // console.log("Button clicked from addEventListener");
