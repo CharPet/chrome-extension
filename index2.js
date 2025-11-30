@@ -76,10 +76,31 @@ console.log(Boolean(-0)); // falsy
 
 // --------------------------------------
 
+// const welcomeEl = document.getElementById("welcome-el");
+
+// function greetUser(greeting, name) {
+//   // welcomeEl.textContent = greeting + ", " + name + "!";
+//   welcomeEl.textContent = `${greeting}, ${name}!`;
+// }
+
+// greetUser("Howdy", "Pepe");
+
+// --------------------------------------
+
 const welcomeEl = document.getElementById("welcome-el");
 
-function greetUser(greeting, name) {
-  welcomeEl.textContent = greeting + ", " + name + "!";
+function greetUser(greeting, name, emoji) {
+  // welcomeEl.textContent = greeting + ", " + name + "!";
+  welcomeEl.textContent = `${greeting}, ${name} ${emoji}`;
 }
 
-greetUser("Howdy", "Pepe");
+greetUser("Howdy", "Pepe", "emoji");
+
+// --------------------------------------
+
+function add(num1, num2) {
+  return num1 + num2;
+}
+
+console.log(add(3, 4));
+console.log(add(9, 102));
