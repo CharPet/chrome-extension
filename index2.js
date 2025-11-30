@@ -65,3 +65,21 @@ console.log(Boolean([0])); // truthy
 console.log(Boolean(-0)); // falsy
 
 // --------------------------------------
+
+// const welcomeEl = document.getElementById("welcome-el");
+
+// function greetUser(name) {
+//   welcomeEl.textContent = "Welcome back, " + name + "!";
+// }
+
+// greetUser("Pepe");
+
+// --------------------------------------
+
+const welcomeEl = document.getElementById("welcome-el");
+
+function greetUser(greeting, name) {
+  welcomeEl.textContent = greeting + ", " + name + "!";
+}
+
+greetUser("Howdy", "Pepe");
