@@ -104,3 +104,13 @@ function add(num1, num2) {
 
 console.log(add(3, 4));
 console.log(add(9, 102));
+
+// --------------------------------------
+
+const array = [0, 1, 2];
+
+function getFirst(arr) {
+  return arr[0];
+}
+
+console.log(getFirst(array));
