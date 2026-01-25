@@ -80,25 +80,23 @@ if (leadsFromLocalStorage) {
   render(myLeads);
 }
 
-const tabs = [
-  {
-    url: "https://www.linkedin.com/in/per-harald-borgen",
-  },
-];
+// const tabs = [
+//   {
+//     url: "https://www.linkedin.com/in/per-harald-borgen",
+//   },
+// ];
 
 // -----------------------------------
 
 tabBtn.addEventListener("click", function () {
-  // Grab the URL of the current tab (Chrome API - Documentation)!
+  if (!chrome || !chrome.tabs) return;
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    let activeTab = tabs[0];
-    let activeTabId = activeTab.id;
+    if (!tabs || !tabs[0]) return;
+    const url = tabs[0].url;
+    myLeads.push(url);
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
   });
-
-  // console.log("${tabs[0].url}");
-  myLeads.push(tabs[0].url);
-  localStorage.setItem("myLeads", JSON.stringify(myLeads));
-  render(myLeads);
 });
 
 // -----------------------------------
