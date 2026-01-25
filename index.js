@@ -89,6 +89,12 @@ const tabs = [
 // -----------------------------------
 
 tabBtn.addEventListener("click", function () {
+  // Grab the URL of the current tab (Chrome API - Documentation)!
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    let activeTab = tabs[0];
+    let activeTabId = activeTab.id;
+  });
+
   // console.log("${tabs[0].url}");
   myLeads.push(tabs[0].url);
   localStorage.setItem("myLeads", JSON.stringify(myLeads));
